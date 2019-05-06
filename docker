@@ -1,0 +1,18 @@
+1)DockerFile create
+2)docker-machine create <machine-name> --driver virtualbox
+docker-machine ls
+docker-machine.exe env --shell cmd <machinename>
+* active
+- dead
+eval "$(docker-machine enc <machine-name>)"
+docker build -t my-name .                                ->(dot indicate curret directory) Create an image
+docker images
+docker run -d -p 8080:8080 my-name  		         ->(to convert the image to container)
+curl $(docker-machine ip <machine-name>):8080
+
+
+
+FROM rossbachp/java8
+FROM rossbachp/tomcat8
+
+COPY /target/payslip-0.0.1.war /opt/tomcat/webapps/
